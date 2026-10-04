@@ -24,7 +24,7 @@ export default function LandingPage() {
           ></div>
           
           {/* Gradient Overlay to ensure text readability without hiding the image */}
-          <div className="absolute inset-y-0 left-0 w-[60%] z-10 bg-gradient-to-r from-white/90 via-white/50 to-transparent"></div>
+          <div className="absolute inset-0 z-10 bg-gradient-to-r from-white/95 via-white/80 md:via-white/50 to-transparent"></div>
           <div className="absolute bottom-0 left-0 w-full h-32 z-10 bg-gradient-to-t from-white to-transparent"></div>
 
           <div className="relative z-20 w-full px-4 md:px-12 py-10 md:py-16 flex flex-col md:flex-row items-center justify-between">
@@ -44,16 +44,16 @@ export default function LandingPage() {
                 AI-driven root-zone salinity forecasting and crop advisory for coastal Bangladesh.
               </p>
               
-              <div className="flex flex-wrap items-center gap-4 pt-6">
+              <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 pt-6">
                 <Link 
-                  href="/map"
-                  className="px-8 py-3.5 rounded-full bg-[#166534] hover:bg-[#14532d] text-white font-bold flex items-center gap-2 transition-all shadow-md text-lg"
+                  href="/#map"
+                  className="w-full sm:w-auto justify-center px-8 py-3.5 rounded-full bg-[#166534] hover:bg-[#14532d] text-white font-bold flex items-center gap-2 transition-all shadow-md text-lg"
                 >
                   Explore Salinity Map <ArrowRight className="w-5 h-5" />
                 </Link>
                 <Link 
-                  href="/forecast"
-                  className="px-8 py-3.5 rounded-full bg-[#f0fdf4] hover:bg-[#dcfce7] text-[#166534] font-bold flex items-center gap-2 transition-all border border-[#dcfce7] text-lg"
+                  href="/#forecast"
+                  className="w-full sm:w-auto justify-center px-8 py-3.5 rounded-full bg-[#f0fdf4] hover:bg-[#dcfce7] text-[#166534] font-bold flex items-center gap-2 transition-all border border-[#dcfce7] text-lg"
                 >
                   View Forecast
                 </Link>
