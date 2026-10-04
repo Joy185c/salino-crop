@@ -18,6 +18,8 @@ export const metadata: Metadata = {
 };
 
 import { Header } from "@/components/layout/Header";
+import { AssistantProvider } from "@/components/assistant/AssistantContext";
+import { FloatingAssistant } from "@/components/assistant/FloatingAssistant";
 
 export default function RootLayout({
   children,
@@ -27,10 +29,13 @@ export default function RootLayout({
   return (
     <html lang="bn" className="light">
       <body className={`${inter.className} bg-slate-950 text-slate-100 antialiased`}>
-        <Header />
-        <main className="min-h-screen">
-          {children}
-        </main>
+        <AssistantProvider>
+          <Header />
+          <main className="min-h-screen">
+            {children}
+          </main>
+          <FloatingAssistant />
+        </AssistantProvider>
       </body>
     </html>
   );

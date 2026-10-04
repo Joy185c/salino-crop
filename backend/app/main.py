@@ -8,7 +8,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.middleware.trustedhost import TrustedHostMiddleware
 
-from app.api.routes import advisory, geography, health, map_data, plots, validation, voice
+from app.api.routes import advisory, geography, health, map_data, plots, validation, voice, assistant
 from app.core.config import get_settings
 from app.core.logging import configure_logging
 
@@ -63,6 +63,7 @@ app.include_router(advisory.router)
 app.include_router(voice.router)
 app.include_router(validation.router)
 app.include_router(map_data.router)
+app.include_router(assistant.router)
 
 
 @app.get("/")
