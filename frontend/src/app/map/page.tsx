@@ -104,9 +104,9 @@ export default function MapPage() {
               <Link href={`/plot/${selectedPlot.id}`} className="text-[#0f766e] text-xs font-bold hover:underline">View Details &gt;</Link>
             </div>
 
-            <div className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full border mb-4 ${selectedSalinity.risk_level === 'Critical' ? 'bg-red-50 border-red-100' : selectedSalinity.risk_level === 'High' ? 'bg-orange-50 border-orange-100' : 'bg-green-50 border-green-100'}`}>
-                <div className={`w-2 h-2 rounded-full animate-pulse ${selectedSalinity.risk_level === 'Critical' ? 'bg-red-600' : selectedSalinity.risk_level === 'High' ? 'bg-orange-500' : 'bg-green-500'}`}></div>
-                <span className={`text-[10px] font-extrabold uppercase tracking-wider ${selectedSalinity.risk_level === 'Critical' ? 'text-red-600' : selectedSalinity.risk_level === 'High' ? 'text-orange-600' : 'text-green-700'}`}>{selectedSalinity.risk_level} RISK</span>
+            <div className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full border mb-4 ${selectedSalinity.risk_level === 'very_high' ? 'bg-red-50 border-red-100' : selectedSalinity.risk_level === 'high' ? 'bg-orange-50 border-orange-100' : 'bg-green-50 border-green-100'}`}>
+                <div className={`w-2 h-2 rounded-full animate-pulse ${selectedSalinity.risk_level === 'very_high' ? 'bg-red-600' : selectedSalinity.risk_level === 'high' ? 'bg-orange-500' : 'bg-green-500'}`}></div>
+                <span className={`text-[10px] font-extrabold uppercase tracking-wider ${selectedSalinity.risk_level === 'very_high' ? 'text-red-600' : selectedSalinity.risk_level === 'high' ? 'text-orange-600' : 'text-green-700'}`}>{selectedSalinity.risk_level} RISK</span>
             </div>
 
             <div className="mb-4">

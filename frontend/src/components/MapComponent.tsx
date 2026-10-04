@@ -5,7 +5,7 @@ import { MapContainer, TileLayer, Marker, Popup, CircleMarker, useMap } from "re
 import "leaflet/dist/leaflet.css";
 import L from "leaflet";
 import type { Plot, SalinityData, RiskLevel, ForecastData } from "@/types";
-import { getPlotCoords, getRiskColor } from "@/lib/utils";
+import { getRiskColor } from "@/lib/utils";
 import { getSalinityMapData, getPlotForecast } from "@/lib/api";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
@@ -90,10 +90,10 @@ export default function MapComponent({
         const f90 = f60 + 0.8;
         
         const getRisk = (ec: number): RiskLevel => {
-          if (ec < 4) return "Low";
-          if (ec < 6) return "Moderate";
-          if (ec < 8) return "High";
-          return "Critical";
+          if (ec < 4) return "low";
+          if (ec < 6) return "moderate";
+          if (ec < 8) return "high";
+          return "very_high";
         };
 
         const mockCurrentEC = props.ec_ds_m || baseEC;
