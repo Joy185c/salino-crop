@@ -1,0 +1,1 @@
+"""SalinO-Crop app package"""

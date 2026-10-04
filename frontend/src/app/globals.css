@@ -1,0 +1,182 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Noto+Sans+Bengali:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* -- Brand palette --- */
+  --color-teal-400: #2dd4bf;
+  --color-teal-500: #14b8a6;
+  --color-teal-600: #0d9488;
+  --color-amber-400: #fbbf24;
+  --color-amber-500: #f59e0b;
+  --color-rose-500: #f43f5e;
+  --color-rose-600: #e11d48;
+  --color-emerald-400: #34d399;
+  --color-emerald-500: #10b981;
+
+  /* -- Risk colors --- */
+  --risk-low: #10b981;
+  --risk-moderate: #f59e0b;
+  --risk-high: #f97316;
+  --risk-very-high: #e11d48;
+  --risk-unknown: #6b7280;
+
+  /* -- Background layers --- */
+  --bg-primary: #ffffff;
+  --bg-card: #f8fafc;
+  --bg-card-hover: #f0fdf4;
+  --bg-border: #e2e8f0;
+}
+
+/* -- Base --------------------------------------------------------------- */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--bg-primary);
+  color: #0f172a;
+  min-height: 100vh;
+}
+
+.font-bengali {
+  font-family: 'Noto Sans Bengali', 'Inter', sans-serif;
+}
+
+/* -- Card components ---------------------------------------------------- */
+.card {
+  @apply bg-slate-900 border border-slate-800 rounded-xl;
+}
+
+.card-hover {
+  @apply bg-slate-900 border border-slate-800 rounded-xl transition-all duration-200 hover:border-teal-500/40 hover:bg-slate-800/80;
+}
+
+/* -- Risk badges -------------------------------------------------------- */
+.risk-badge {
+  @apply inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold;
+}
+
+.risk-low {
+  @apply inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold bg-emerald-500/15 text-emerald-400 border border-emerald-500/30;
+}
+
+.risk-moderate {
+  @apply inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold bg-amber-500/15 text-amber-400 border border-amber-500/30;
+}
+
+.risk-high {
+  @apply inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold bg-orange-500/15 text-orange-400 border border-orange-500/30;
+}
+
+.risk-very-high {
+  @apply inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold bg-rose-500/15 text-rose-400 border border-rose-500/30;
+}
+
+.risk-unknown {
+  @apply inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold bg-slate-700/50 text-slate-400 border border-slate-600/30;
+}
+
+/* -- Demo banner -------------------------------------------------------- */
+.demo-banner {
+  @apply bg-amber-500/10 border border-amber-500/30 text-amber-300 text-xs font-medium;
+}
+
+/* -- Scrollbar ---------------------------------------------------------- */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #0f172a;
+}
+::-webkit-scrollbar-thumb {
+  background: #334155;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #475569;
+}
+
+/* -- MapLibre overrides ------------------------------------------------- */
+.maplibregl-map {
+  font-family: 'Inter', sans-serif !important;
+}
+
+.maplibregl-ctrl-bottom-left,
+.maplibregl-ctrl-bottom-right {
+  @apply opacity-60;
+}
+
+.maplibregl-popup-content {
+  @apply bg-slate-900 border border-slate-700 text-slate-200 rounded-lg shadow-xl;
+  padding: 12px 16px !important;
+}
+
+.maplibregl-popup-tip {
+  border-top-color: #1e293b !important;
+}
+
+/* -- Animations --------------------------------------------------------- */
+@keyframes pulse-ring {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.6; transform: scale(1.05); }
+}
+
+@keyframes slide-in-right {
+  from { transform: translateX(100%); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes fade-up {
+  from { transform: translateY(12px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.animate-slide-in {
+  animation: slide-in-right 0.3s ease-out;
+}
+
+.animate-fade-up {
+  animation: fade-up 0.35s ease-out;
+}
+
+/* -- Loading skeleton --------------------------------------------------- */
+.skeleton {
+  @apply bg-slate-800 animate-pulse rounded;
+}
+
+/* -- Glow effects ------------------------------------------------------- */
+.glow-teal {
+  box-shadow: 0 0 20px rgba(20, 184, 166, 0.15);
+}
+
+.glow-rose {
+  box-shadow: 0 0 20px rgba(244, 63, 94, 0.2);
+}
+
+/* -- Number display ----------------------------------------------------- */
+.ec-value {
+  @apply font-mono text-2xl font-bold tabular-nums;
+}
+
+/* -- Sidebar ------------------------------------------------------------ */
+.sidebar {
+  @apply bg-slate-900 border-r border-slate-800 flex flex-col;
+}
+
+/* -- Confidence bar ----------------------------------------------------- */
+.confidence-track {
+  @apply h-1.5 rounded-full bg-slate-800 overflow-hidden;
+}
+
+.confidence-fill {
+  @apply h-full rounded-full transition-all duration-700 ease-out;
+}
