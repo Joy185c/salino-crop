@@ -3,6 +3,13 @@
 import Link from "next/link";
 import { ArrowRight, Map as MapIcon, CalendarDays, Maximize2, ShieldCheck } from "lucide-react";
 
+import MapPage from "./map/page";
+import ForecastPage from "./forecast/page";
+import AdvisoryPage from "./advisory/page";
+import ValidationPage from "./validation/page";
+import DataSourcesPage from "./data-sources/page";
+import MethodologyPage from "./methodology/page";
+
 export default function LandingPage() {
   return (
     <div className="bg-[#f4f7fb] min-h-screen py-6 px-4 md:px-8">
@@ -146,6 +153,32 @@ export default function LandingPage() {
         </div>
         
       </div>
+
+      {/* Embedded Pages for Single-Page Layout */}
+      <section id="map" className="mt-16 relative z-30 pt-16">
+        <MapPage />
+      </section>
+
+      <section id="forecast" className="relative z-30 pt-16">
+        <ForecastPage />
+      </section>
+
+      <section id="advisory" className="relative z-30 pt-16">
+        <AdvisoryPage />
+      </section>
+
+      <section id="validation" className="relative z-30 pt-16">
+        <ValidationPage />
+      </section>
+
+      <section id="data-sources" className="relative z-30 pt-16">
+        <DataSourcesPage />
+      </section>
+
+      <section id="methodology" className="relative z-30 pt-16">
+        <MethodologyPage />
+      </section>
+
     </div>
   );
 }

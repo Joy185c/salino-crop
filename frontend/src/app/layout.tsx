@@ -18,6 +18,7 @@ export const metadata: Metadata = {
 };
 
 import { Header } from "@/components/layout/Header";
+import { Footer } from "@/components/layout/Footer";
 import { AssistantProvider } from "@/components/assistant/AssistantContext";
 import { FloatingAssistant } from "@/components/assistant/FloatingAssistant";
 
@@ -34,6 +35,7 @@ export default function RootLayout({
           <main className="min-h-screen">
             {children}
           </main>
+          <Footer />
           <FloatingAssistant />
         </AssistantProvider>
       </body>

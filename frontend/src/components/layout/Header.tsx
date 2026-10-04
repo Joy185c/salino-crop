@@ -7,13 +7,13 @@ import { Sprout, Menu, X } from "lucide-react";
 
 const navItems = [
   { href: "/", label: "Home" },
-  { href: "/map", label: "Map" },
+  { href: "/#map", label: "Map" },
   { href: "/plots", label: "Plots" },
-  { href: "/forecast", label: "Forecast" },
-  { href: "/advisory", label: "Advisory" },
-  { href: "/validation", label: "Validation" },
-  { href: "/data-sources", label: "Data Sources" },
-  { href: "/methodology", label: "Methodology" },
+  { href: "/#forecast", label: "Forecast" },
+  { href: "/#advisory", label: "Advisory" },
+  { href: "/#validation", label: "Validation" },
+  { href: "/#data-sources", label: "Data Sources" },
+  { href: "/#methodology", label: "Methodology" },
 ];
 
 export function Header() {
