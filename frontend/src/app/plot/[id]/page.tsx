@@ -76,7 +76,7 @@ export default function PlotDetailsPrototype() {
           {/* Forecast Card */}
           <div className="lg:col-span-7 bg-white p-6 rounded-3xl border border-gray-100 shadow-sm">
             <h2 className="text-sm font-extrabold text-gray-900 mb-6">Forecast (dS/m)</h2>
-            <div className="grid grid-cols-3 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
               {/* 30 Days */}
               <div className="bg-[#f8fafc] rounded-2xl p-4 flex flex-col items-center justify-center border border-gray-100">
                 <div className="text-xs font-bold text-gray-800 mb-2">30 Days</div>

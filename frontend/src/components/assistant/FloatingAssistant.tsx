@@ -24,7 +24,7 @@ export function FloatingAssistant() {
   }
 
   return (
-    <div className="fixed bottom-0 right-0 sm:bottom-6 sm:right-6 z-[1000] w-full sm:w-[400px] h-[90vh] sm:h-[650px] max-h-screen bg-white sm:rounded-2xl shadow-2xl border border-gray-100 flex flex-col overflow-hidden animate-slide-in">
+    <div className="fixed bottom-0 right-0 sm:bottom-6 sm:right-6 z-[1000] w-full sm:w-[400px] h-[90vh] sm:h-[650px] max-h-screen bg-white rounded-t-2xl sm:rounded-2xl shadow-2xl border border-gray-100 flex flex-col overflow-hidden animate-slide-in">
       {/* Header */}
       <div className="bg-[#16a34a] text-white p-4 flex items-center justify-between shrink-0 shadow-sm z-10">
         <div className="flex items-center gap-2">

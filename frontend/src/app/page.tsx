@@ -27,7 +27,7 @@ export default function LandingPage() {
           <div className="absolute inset-y-0 left-0 w-[60%] z-10 bg-gradient-to-r from-white/90 via-white/50 to-transparent"></div>
           <div className="absolute bottom-0 left-0 w-full h-32 z-10 bg-gradient-to-t from-white to-transparent"></div>
 
-          <div className="relative z-20 w-full px-12 py-16 flex flex-col md:flex-row items-center justify-between">
+          <div className="relative z-20 w-full px-4 md:px-12 py-10 md:py-16 flex flex-col md:flex-row items-center justify-between">
             
             {/* Left Content */}
             <div className="flex-1 max-w-2xl space-y-6">
@@ -81,7 +81,7 @@ export default function LandingPage() {
         </div>
 
         {/* IMPACT STRIP */}
-        <div className="bg-white border-y border-slate-100 px-12 relative z-30">
+        <div className="bg-white border-y border-slate-100 px-4 md:px-12 relative z-30">
           <div className="py-8 grid grid-cols-2 md:grid-cols-4 gap-8">
             {[
               { value: "19", label: "Coastal Districts", icon: MapIcon },
@@ -103,11 +103,11 @@ export default function LandingPage() {
         </div>
 
         {/* DASHBOARD PREVIEW */}
-        <div className="bg-white py-12 px-12 relative z-30">
+        <div className="bg-white py-8 md:py-12 px-4 md:px-12 relative z-30">
           <div className="grid md:grid-cols-3 gap-6">
             
             {/* Current Coastal Risk Card */}
-            <div className="bg-[#f0fdf4] rounded-3xl p-8 border border-[#dcfce7] flex flex-col justify-center">
+            <div className="bg-[#f0fdf4] rounded-3xl p-6 md:p-8 border border-[#dcfce7] flex flex-col justify-center">
               <div className="text-lg font-bold text-[#0f172a] mb-4">Current Coastal Risk</div>
               <div className="flex items-center gap-3 text-[#f97316] mb-4">
                 <AlertTriangle className="w-10 h-10" />
@@ -122,20 +122,20 @@ export default function LandingPage() {
             <div className="md:col-span-2 bg-white rounded-3xl p-8 border border-slate-200 shadow-sm relative overflow-hidden flex flex-col justify-between">
               <div className="text-lg font-bold text-[#0f172a] mb-6">Forecast Snapshot</div>
               
-              <div className="grid grid-cols-4 gap-4 relative z-10 w-[80%]">
+              <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4 relative z-10 w-full lg:w-[80%]">
                 {[
                   { label: "CURRENT", ec: "4.8", risk: "High", color: "text-[#ef4444]", bg: "bg-[#fef2f2]" },
                   { label: "30 DAYS", ec: "5.4", risk: "Moderate", color: "text-[#f59e0b]", bg: "bg-[#fffbeb]" },
                   { label: "60 DAYS", ec: "6.1", risk: "High", color: "text-[#ef4444]", bg: "bg-[#fef2f2]" },
                   { label: "90 DAYS", ec: "6.8", risk: "Critical", color: "text-[#dc2626]", bg: "bg-[#fef2f2]" },
                 ].map((item, i) => (
-                  <div key={i} className={`rounded-2xl p-4 flex flex-col items-center justify-center border border-slate-50`}>
-                    <div className="text-xs font-extrabold text-[#0f172a] mb-3">{item.label}</div>
-                    <div className="flex items-end gap-1 mb-3">
-                      <div className="text-4xl font-extrabold text-[#0f172a] leading-none">{item.ec}</div>
-                      <div className="text-sm font-bold text-[#ef4444] leading-relaxed">dS/m</div>
+                  <div key={i} className={`rounded-2xl p-3 md:p-4 flex flex-col items-center justify-center border border-slate-50`}>
+                    <div className="text-[10px] md:text-xs font-extrabold text-[#0f172a] mb-2 md:mb-3">{item.label}</div>
+                    <div className="flex items-end gap-1 mb-2 md:mb-3">
+                      <div className="text-3xl md:text-4xl font-extrabold text-[#0f172a] leading-none">{item.ec}</div>
+                      <div className="text-xs md:text-sm font-bold text-[#ef4444] leading-relaxed">dS/m</div>
                     </div>
-                    <div className={`px-4 py-1.5 rounded-full text-xs font-bold ${item.color} ${item.bg}`}>
+                    <div className={`px-3 md:px-4 py-1 md:py-1.5 rounded-full text-[10px] md:text-xs font-bold ${item.color} ${item.bg}`}>
                       {item.risk}
                     </div>
                   </div>

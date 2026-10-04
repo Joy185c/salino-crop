@@ -36,6 +36,7 @@ export default function MapComponent({
   searchQuery
 }: MapComponentProps) {
   const [mapData, setMapData] = useState<any>(null);
+  const [isMounted, setIsMounted] = useState(false);
   const isDemo = process.env.NEXT_PUBLIC_DEMO_MODE === "true";
 
   useEffect(() => {
@@ -48,7 +49,12 @@ export default function MapComponent({
       }
     }
     loadData();
+    setIsMounted(true);
   }, []);
+
+  if (!isMounted) {
+    return <div className="h-full w-full bg-[#e5e7eb] flex items-center justify-center animate-pulse">Initializing Map...</div>;
+  }
 
   return (
     <MapContainer 

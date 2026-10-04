@@ -37,9 +37,9 @@ export default function MapPage() {
           />
         </div>
 
-        {/* Floating Top Controls */}
-        <div className="absolute top-6 left-0 right-0 flex justify-center pointer-events-none z-[1000]">
-          <div className="bg-white rounded-full shadow-lg p-1.5 flex items-center gap-1 pointer-events-auto border border-slate-100">
+        {/* Floating Top Controls (Horizon) */}
+        <div className="absolute bottom-6 md:top-6 md:bottom-auto left-0 right-0 flex justify-center pointer-events-none z-[1000] px-4">
+          <div className="bg-white rounded-full shadow-lg p-1.5 flex flex-wrap justify-center items-center gap-1 pointer-events-auto border border-slate-100">
             {HORIZON_OPTIONS.map((h) => (
               <button
                 key={h}
@@ -57,7 +57,7 @@ export default function MapPage() {
         </div>
 
         {/* Floating Search Bar (Top Left) */}
-        <div className="absolute top-6 left-6 z-[1000]">
+        <div className="absolute top-4 md:top-6 left-4 md:left-6 right-4 md:right-auto z-[1000]">
           <div className="bg-white rounded-full shadow-lg px-4 py-3 flex items-center gap-3 w-64 border border-slate-100 pointer-events-auto">
             <svg className="w-5 h-5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
             <input 
@@ -128,7 +128,7 @@ export default function MapPage() {
             </div>
 
             {horizon === 0 && (
-              <div className="grid grid-cols-3 gap-2 mb-6">
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 mb-6">
                 {[
                   { label: "30D", val: selectedForecast?.ec_30d || "5.4", risk: selectedForecast?.risk_30d || "Moderate", c: "text-amber-500", bg: "bg-amber-50" },
                   { label: "60D", val: selectedForecast?.ec_60d || "6.1", risk: selectedForecast?.risk_60d || "High", c: "text-orange-500", bg: "bg-orange-50" },
